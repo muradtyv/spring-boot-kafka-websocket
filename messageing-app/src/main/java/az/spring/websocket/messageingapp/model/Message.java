@@ -1,9 +1,13 @@
 package az.spring.websocket.messageingapp.model;
 
 import az.spring.websocket.messageingapp.enums.MessageType;
-import lombok.Data;
+import lombok.*;
 
 @Data
+@Builder
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Message {
 
     private MessageType type;
