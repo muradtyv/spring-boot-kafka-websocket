@@ -5,7 +5,9 @@ import lombok.*;
 
 @Data
 @Builder
-@ToString
+//@ToString
+//@Setter
+//@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Message {

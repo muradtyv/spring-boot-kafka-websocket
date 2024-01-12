@@ -23,7 +23,7 @@ public class MessageController {
         this.simpMessageSendingOperations = simpMessageSendingOperations;
     }
 
-    @MessageMapping("/chat.send-message")
+    @MessageMapping("/chat/send-message")
     public void senMessage(@Payload Message message, SimpMessageHeaderAccessor simpMessageHeaderAccessor) {
         System.out.println("simpMessageHeaderAccessor ==========" + simpMessageHeaderAccessor);
         message.setSessionId(simpMessageHeaderAccessor.getSessionId());
@@ -33,7 +33,7 @@ public class MessageController {
         log.info("Message sent to /topic/public: " + message);
     }
 
-    @MessageMapping("/chat.add-user")
+    @MessageMapping("/chat/add-user")
     @SendTo("/topic/public")
     public Message addUser(@Payload Message message, SimpMessageHeaderAccessor simpMessageHeaderAccessor) {
         if(simpMessageHeaderAccessor.getSessionAttributes() != null) {
